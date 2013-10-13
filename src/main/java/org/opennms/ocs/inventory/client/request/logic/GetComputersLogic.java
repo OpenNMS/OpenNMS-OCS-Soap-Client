@@ -24,7 +24,7 @@ import org.slf4j.LoggerFactory;
  */
 public class GetComputersLogic extends GeneralClientLogic {
 
-    private static Logger LOGGER = LoggerFactory.getLogger(GetComputersLogic.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(GetComputersLogic.class);
     
     /**
      * The Constant ASKINGFOR.
@@ -42,6 +42,7 @@ public class GetComputersLogic extends GeneralClientLogic {
      * org.opennms.ocs.inventory.client.request.logic.OcsInventoryClientLogic
      * #init(java.lang.String, java.lang.String, java.lang.String)
      */
+    @Override
     public void init(String host, String login, String password) throws SOAPException {
     	super.init(host, login, password, null, new ArrayList<String>());
     	initRequestParameter();
@@ -60,12 +61,14 @@ public class GetComputersLogic extends GeneralClientLogic {
      * org.opennms.ocs.inventory.client.request.logic.OcsInventoryClientLogic
      * #init(java.lang.String, java.lang.String, java.lang.String, java.lang.String)
      */
+    @Override
     public void init(String host, String login, String password, String checksum, List<String> tags) throws SOAPException {
     	super.init(host, login, password, checksum, tags);
     	initRequestParameter();
     
     }
 
+    @Override
     public void init(String host, String login, String password, String checksum) throws SOAPException {
         super.init(host, login, password, checksum, new ArrayList<String>());
         initRequestParameter();
