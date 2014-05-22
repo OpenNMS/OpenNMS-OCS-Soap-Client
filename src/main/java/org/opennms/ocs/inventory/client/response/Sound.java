@@ -52,7 +52,7 @@ public class Sound {
      * 
      * @return possible object is {@link String }
      */
-    public String getDESCRIPTION() {
+    public String getDescription() {
         return _description;
     }
 
